@@ -10889,3 +10889,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+footer{
+  background-color: black;
+}
+
+.copy{
+  color: white;
+  text-align: center;
+}
+

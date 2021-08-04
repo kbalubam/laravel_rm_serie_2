@@ -31,3 +31,7 @@ Route::get('/age', function(){
     $age = "25";
     return view('pages.ages', compact('age'));
 })->name('age');
+
+Route::get('/caroussel', function(){
+    return view('pages.caroussel');
+})->name('caroussel');

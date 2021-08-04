@@ -15,6 +15,9 @@
           <li class="nav-item">
           <a class="nav-link" href="{{route('age')}}">age</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{{route('caroussel')}}">caroussel</a>
+          </li>
           
         </ul>
       </div>
