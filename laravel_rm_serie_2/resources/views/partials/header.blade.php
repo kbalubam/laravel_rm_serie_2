@@ -18,6 +18,15 @@
           <li class="nav-item">
           <a class="nav-link" href="{{route('caroussel')}}">caroussel</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{{route('animals')}}">animals</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{{route('color')}}">color</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{{route('plat')}}">plat</a>
+          </li> 
           
         </ul>
       </div>
