@@ -72,17 +72,10 @@ class TitreController extends Controller
 
         $request->validate([
             "titre"=>['required'],
-            "soustitre"=>['required'],
-
         ]);
-
         $titre ->titre = $request ->titre;
-        $titre ->soustitre = $request ->soustitre;
         $titre ->save();
-        return redirect()->back();
-
-
-
+        return redirect()->route('titres.show', $titre->id);
     }
 
     /**
@@ -94,6 +87,6 @@ class TitreController extends Controller
     public function destroy(Titre $titre)
     {
         $titre->delete();
-        return redirect()->back();
+        return redirect()->route('titres.show');
     }
 }

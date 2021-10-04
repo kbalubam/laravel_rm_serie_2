@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $allUser = User::all();
-        view('back.user.allUser', compact('allUser'));
+        return view('back.user.allUser', compact('allUser'));
     }
 
     /**
@@ -25,8 +25,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-       
+
     {
+        $this->authorize('user_create');
         return view('back.user.create');
     }
 
@@ -38,6 +39,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             "name"=>['required'],
             "email"=>['required'],
@@ -66,6 +68,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+
+    
         return view('back.user.show', compact('user'));
     }
 
@@ -77,7 +81,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-    return view('back.users.edit', compact('user'));
+        $this->authorize('user_create');
+        return view('back.users.edit', compact('user'));
     }
 
     /**
@@ -114,6 +119,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $this->authorize('user_create');
         $user->delete();
+        return redirect()->back();
     }
 }

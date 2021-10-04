@@ -53,7 +53,7 @@ Route::resource('/back/footers', FooterController::class);
 Route::resource('/back/heroes', HeroController::class);
 Route::resource('/back/usefullinks', UsefullinkfooterController::class);
 Route::resource('/back/serviceslinks', ServiceslinkfooterController::class);
-Route::resource('/back/users', UserController::class);
+Route::resource('/back/users', UserController::class)->middleware(['admin']);
 
 
 Route::get('/back/sectionsAbout',function(){
@@ -105,7 +105,7 @@ Route::get('/back/sectionsTeam',function(){
 
 Route::get('/back',function(){
     return view('back.pages.home');
-})->name('back');
+})->name('back')->middleware(['auth']);
 Route::resource('back/abouts', AboutController::class);
 Route::get('/dashboard', function () {
     return view('dashboard');
