@@ -53,7 +53,7 @@ Route::resource('/back/footers', FooterController::class);
 Route::resource('/back/heroes', HeroController::class);
 Route::resource('/back/usefullinks', UsefullinkfooterController::class);
 Route::resource('/back/serviceslinks', ServiceslinkfooterController::class);
-Route::ressource('/back/users', UserController::class);
+Route::resource('/back/users', UserController::class);
 
 
 Route::get('/back/sectionsAbout',function(){
@@ -95,11 +95,11 @@ Route::get('/back/sectionsTeam',function(){
     return view('back.team.allSectionTeam',compact('teams'));
 })->name('sectionsTeam');
 
-Route::get('/back/sectionsTestimonial',function(){
+ Route::get('/back/sectionsTestimonial',function(){
 
-    $testimonials = Testimonial::all();
-    return view('back.testimonial.allSectionTestimonial',compact('testimonials'));
-})->name('sectionsTestimonial');
+     $testimonials = Testimonial::all();
+     return view('back.testimonial.allSectionTestimonial',compact('testimonials'));
+ })->name('sectionsTestimonial');
 
 
 

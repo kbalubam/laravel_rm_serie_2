@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Navbar;
 use App\Models\Titre;
 use Illuminate\Http\Request;
 
-class TitreController extends Controller
+class NavbarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,10 @@ class TitreController extends Controller
      */
     public function index()
     {
-        //
+        $titreBikin = Titre::find(9);
+
+        $navbars = Navbar::all();
+        return view('back.navbar.allNavbar', compact('navbars','titreBikin'));
     }
 
     /**
@@ -24,7 +28,6 @@ class TitreController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -41,59 +44,57 @@ class TitreController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Titre  $titre
+     * @param  \App\Models\Navbar  $navbar
      * @return \Illuminate\Http\Response
      */
-    public function show(Titre $titre)
+    public function show(Navbar $navbar)
     {
-        return view('back.titre.show',compact('titre'));
+        // return view('back.navbar.show', compact('navbar'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Titre  $titre
+     * @param  \App\Models\Navbar  $navbar
      * @return \Illuminate\Http\Response
      */
-    public function edit(Titre $titre)
+    public function edit(Navbar $navbar)
     {
-        return view('back.titre.edit', compact('titre'));
+        return view('back.navbar.edit', compact("navbar"));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Titre  $titre
+     * @param  \App\Models\Navbar  $navbar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Titre $titre)
+    public function update(Request $request, Navbar $navbar)
     {
 
-        $request->validate([
-            "titre"=>['required'],
-            "soustitre"=>['required'],
 
+        $request->validate([
+            "lien"=>['required'],
+            "name" =>['required']
         ]);
 
-        $titre ->titre = $request ->titre;
-        $titre ->soustitre = $request ->soustitre;
-        $titre ->save();
-        return redirect()->back();
-
-
+        $navbar->lien = $request->lien;
+        $navbar->name = $request->name;
+        $navbar->save();
+        return redirect()->route('navbars.index');
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Titre  $titre
+     * @param  \App\Models\Navbar  $navbar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Titre $titre)
+    public function destroy(Navbar $navbar)
     {
-        $titre->delete();
-        return redirect()->back();
+        $navbar->delete();
+        return redirect()->route('navbars.index');
     }
 }

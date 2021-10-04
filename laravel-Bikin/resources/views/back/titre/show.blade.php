@@ -11,18 +11,18 @@
     <h6 class="card-subtitle mb-2 text-muted">Titre: <span class="text-info">{{$titre->titre}}</span></h6>
     <p class="card-text">Sous-titre: <span class="text-info">{{$titre->sousTitre}}</span></p>
     <form action="" method="post" class="d-flex justify-content-center mt-3">
-    <a href="" class="btn btn-warning mr-3"><i class="fas fa-edit"></i></a>
+    <a href="{{route('titres.edit', $titre->id)}}" class="btn btn-warning mr-3"><i class="fas fa-edit"></i></a>
     @csrf
     @method('DELETE')
     <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
     </form>
     <div class="d-flex justify-content-center">
-    <a href="{{route('abouts.index')}}" class="btn btn-info mt-2 px-3">back</a>
+    <a href="{{route('navbars.index')}}" class="btn btn-info mt-2 px-3">back</a>
 
     </div>
 
   </div>
 </div>
 </div>
-    
+
 @endsection
