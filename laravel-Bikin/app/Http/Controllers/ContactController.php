@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,7 +15,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        $titreContact = Titre::find(8);
+        return view('back.contact.AllContact',compact('titreContact','contacts'));
     }
 
     /**

@@ -6,24 +6,51 @@
     </div>
     <ul class="nav-list ">
         <li>
-            <a href="#" class="text-light">
+            <a href="{{route('navbars.index')}}" class="text-light">
+            <i class='bx bx-navigation'></i>
+            <span class="links_name">NavBar</span>
+            </a>
+            <span class="tooltip">NavBar</span>
+        </li>
+        <li>
+            <a href="{{route('heroes.index')}}" class="text-light">
+                <i class='bx bx-heading'></i>
+                <span class="links_name">Hero</span>
+            </a>
+            <span class="tooltip">Hero</span>
+        </li>
+        <li>
+            <a href="{{route('abouts.index')}}" class="text-light">
                 <i class='bx bx-question-mark'></i>
-                <span class="links_name">Article</span>
+                <span class="links_name">About</span>
             </a>
-            <span class="tooltip">Article</span>
+            <span class="tooltip">About</span>
         </li>
 
         <li>
-            <a href="#" class="text-light">
-                <i class='bx bx-folder-open'></i>
-                <span class="links_name">Commentaire</span>
+            <a href="{{route('portfolios.index')}}" class="text-light">
+               <i class='bx bx-folder-open' ></i>
+                <span class="links_name">Portfolio</span>
             </a>
-            <span class="tooltip">Commentaire</span>
+            <span class="tooltip">Portfolio</span>
         </li>
-
         <li>
-            <a href="#" class="text-light">
-                <i class='bx bx-book-content'></i>
+            <a href="{{route('services.index')}}" class="text-light">
+               <i class='bx bx-list-ul'></i>
+                <span class="links_name">Service</span>
+            </a>
+            <span class="tooltip">Service</span>
+        </li>
+        <li>
+            <a href="{{route('teams.index')}}" class="text-light">
+               <i class='bx bx-group' ></i>
+                <span class="links_name">Team</span>
+            </a>
+            <span class="tooltip">Team</span>
+        </li>
+        <li>
+            <a href="{{route('testimonials.index')}}" class="text-light">
+               <i class='bx bx-book-open'></i>
                 <span class="links_name">Testimonials</span>
             </a>
             <span class="tooltip">Testimonials</span>
@@ -31,7 +58,34 @@
 
 
 
-  
+
+        <li>
+        <li>
+            <a href="{{route('contacts.index')}}" class="text-light">
+               <i class='bx bx-envelope' ></i>
+                <span class="links_name">Contact</span>
+            </a>
+            <span class="tooltip">Contact</span>
+        </li>
+
+        <li>
+            <a href="{{route('features.index')}}" class="text-light">
+                <i class='bx bx-book-content'></i>
+                <span class="links_name">Features</span>
+            </a>
+            <span class="tooltip">Features</span>
+        </li>
+        <li>
+            <a href="{{route('footers.index')}}" class="text-light">
+                <i class='bx bx-chat'></i>
+                <span class="links_name">Footer</span>
+            </a>
+            <span class="tooltip">Footer</span>
+        </li>
+
+
+
+
 
 
 
@@ -55,15 +109,15 @@
                 </div>
                 <form action="#" method="post">
                     @csrf
-    
+
                     <button type="submit">
                         <a href="#">
-    
+
                             <i class='bx bx-log-out' id="log_out"></i>
-    
-    
+
+
                         </a>
-    
+
                     </button>
                 </form>
             </div>

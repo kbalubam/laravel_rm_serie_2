@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -14,8 +15,11 @@ class PortfolioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $allPort = Portfolio::all();
-        return view('back.portfolio.allPortfolio', compact('allPort'));
+    
+    {   
+        $portfolio = Portfolio::all();
+        $titrePortfolio = Titre::find(5);
+        return view('back.portfolio.allPortfolio', compact('portfolio','titrePortfolio'));
     }
 
     /**
@@ -25,7 +29,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.portfolio.create');
     }
 
     /**
@@ -36,7 +40,21 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "img"=>['required'],
+            "soustitre"=>['required'],
+            "soustitre2"=>['required'],
+            "lien"=>['required'],
+        ]);
+        $portfolio = new Portfolio;
+        $portfolio->soustitre = $request->soustitre;
+        $portfolio->soustitre2 = $request->soustitre;
+        $portfolio->img = $request->file('img')->hashName();
+        $request->file('img')->storePublicly('img/portfolio/', 'public');
+        $portfolio->soustitre2 = $request->soustitre2;
+        $portfolio->lien = $request->lien;
+        $portfolio->save();
+        return redirect()->route('portfolios.index');
     }
 
     /**
@@ -47,7 +65,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        //
+        return view('back.portfolio.show', compact('portfolio'));
     }
 
     /**
@@ -58,7 +76,7 @@ class PortfolioController extends Controller
      */
     public function edit(Portfolio $portfolio)
     {
-        return view('back.portfolio.edit', compact('$portfolio'));
+        return view('back.portfolio.edit', compact('portfolio'));
 
     }
 
@@ -77,15 +95,15 @@ class PortfolioController extends Controller
             "soustitre2"=>['required'],
             "lien"=>['required'],
         ]);
-        Storage::disk('public')->delete('img/'.$portfolio->image);
-        $portfolio->img = $request->img;
+        Storage::disk('public')->delete('img/portfolio/'.$portfolio->img);
         $portfolio->soustitre = $request->soustitre;
-        $request->image = $request->file('image')->hashName();
-        $request->file('image')->storePublicly('img', 'public');
+        $portfolio->soustitre2 = $request->soustitre;
+        $portfolio->img = $request->file('img')->hashName();
+        $request->file('img')->storePublicly('img/portfolio/', 'public');
         $portfolio->soustitre2 = $request->soustitre2;
         $portfolio->lien = $request->lien;
         $portfolio->save();
-        return redirect()->route('navbars.index');
+        return redirect()->route('portfolios.index');
     }
 
     /**
@@ -97,6 +115,6 @@ class PortfolioController extends Controller
     public function destroy(Portfolio $portfolio)
     {
         $portfolio->delete();
-        return redirect()->route('navbars.index');
+        return redirect()->back();
     }
 }

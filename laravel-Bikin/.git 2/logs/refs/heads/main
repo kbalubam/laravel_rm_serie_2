@@ -1,0 +1,23 @@
+0000000000000000000000000000000000000000 b708d26b15411fac3e92718561c3c02e92c384e3 ElsongMaster <elsongmaster@gmail.com> 1632918135 +0200	clone: from https://github.com/kbalubam/bikin.git
+b708d26b15411fac3e92718561c3c02e92c384e3 4465f1efbf41bdff035c9f1d87015b2f842fe27d ElsongMaster <elsongmaster@gmail.com> 1632918987 +0200	pull: Fast-forward
+4465f1efbf41bdff035c9f1d87015b2f842fe27d 313746d9535068d7f1746a1f32431541638a3dea ElsongMaster <elsongmaster@gmail.com> 1632919085 +0200	pull: Fast-forward
+313746d9535068d7f1746a1f32431541638a3dea 30a4e6d2e4a880c82dd215f2dfbbecb579518d5b ElsongMaster <elsongmaster@gmail.com> 1632926116 +0200	commit: titres
+30a4e6d2e4a880c82dd215f2dfbbecb579518d5b fdcf633d356bbf4251fca44787f9b115e8e3bc25 ElsongMaster <elsongmaster@gmail.com> 1632926135 +0200	pull: Merge made by the 'recursive' strategy.
+fdcf633d356bbf4251fca44787f9b115e8e3bc25 aa78c824e77a098d72e1ca50f859fb95cc08a70e ElsongMaster <elsongmaster@gmail.com> 1633017510 +0200	commit: seeder à l'exception de Hero
+aa78c824e77a098d72e1ca50f859fb95cc08a70e dcc672b4700844a3b0fa0910177539fa6b4ae6d3 ElsongMaster <elsongmaster@gmail.com> 1633017519 +0200	pull: Merge made by the 'recursive' strategy.
+dcc672b4700844a3b0fa0910177539fa6b4ae6d3 e26a39be936ae06d8ce87a81ae98ec88c00d040a ElsongMaster <elsongmaster@gmail.com> 1633018344 +0200	commit: MAJ Els
+e26a39be936ae06d8ce87a81ae98ec88c00d040a d4921f3d4329c6d600aacd1eb50744bc7182c4e8 ElsongMaster <elsongmaster@gmail.com> 1633018427 +0200	commit: MAJ Els
+d4921f3d4329c6d600aacd1eb50744bc7182c4e8 5b5ed3d95fa851c55c80359b1074e6421ec87698 ElsongMaster <elsongmaster@gmail.com> 1633019269 +0200	commit: MAJ Els
+5b5ed3d95fa851c55c80359b1074e6421ec87698 7dc6827c0f1886011edd6d021e2550d39cacb99e ElsongMaster <elsongmaster@gmail.com> 1633031983 +0200	commit: Structure de base du backoffice
+7dc6827c0f1886011edd6d021e2550d39cacb99e ebf1a46b98d6189656bf628fb85ab3526ac8c8d5 ElsongMaster <elsongmaster@gmail.com> 1633079567 +0200	commit: recup Version Kevin
+ebf1a46b98d6189656bf628fb85ab3526ac8c8d5 3604079bc4520abaa74fc47e0b36195f8277cbe4 ElsongMaster <elsongmaster@gmail.com> 1633079603 +0200	commit (merge): recup Version Kevin
+3604079bc4520abaa74fc47e0b36195f8277cbe4 9bfb4ba547e11fd4da9c4fe6aac33856c7d0e541 ElsongMaster <elsongmaster@gmail.com> 1633093809 +0200	commit: section about
+9bfb4ba547e11fd4da9c4fe6aac33856c7d0e541 ee5bd80b1a775becf3c1d611a5e3f73c2d574f8c ElsongMaster <elsongmaster@gmail.com> 1633273438 +0200	pull: Fast-forward
+ee5bd80b1a775becf3c1d611a5e3f73c2d574f8c 74c01c62fea2dd105e9565bc57de85829c904ecf ElsongMaster <elsongmaster@gmail.com> 1633293500 +0200	commit: partie visuelle back
+74c01c62fea2dd105e9565bc57de85829c904ecf 06331b54fdde9500127b379c1ea6757bfcfbabf2 ElsongMaster <elsongmaster@gmail.com> 1633333465 +0200	commit: MAJ
+06331b54fdde9500127b379c1ea6757bfcfbabf2 9fabe5b47b9de4027bbad5ff64fe5696fbf9235b ElsongMaster <elsongmaster@gmail.com> 1633350050 +0200	commit: Bug Crud Usefullinkfooter et Serviceslinkfooter
+9fabe5b47b9de4027bbad5ff64fe5696fbf9235b 1a56398cf0ba1b99b642cedbcde4b8ee2b5b96dc ElsongMaster <elsongmaster@gmail.com> 1633350069 +0200	pull: Merge made by the 'recursive' strategy.
+1a56398cf0ba1b99b642cedbcde4b8ee2b5b96dc afa72de8d83ce110d81a9a4637266273357102fd ElsongMaster <elsongmaster@gmail.com> 1633352106 +0200	commit: MAJ
+afa72de8d83ce110d81a9a4637266273357102fd 2a21ed2dcf6f853c721640e3d15647954aa916a4 ElsongMaster <elsongmaster@gmail.com> 1633352224 +0200	commit (merge): MAJ
+2a21ed2dcf6f853c721640e3d15647954aa916a4 28e2630bd4395d23f211ef3c5422ddcd0b05d4ab ElsongMaster <elsongmaster@gmail.com> 1633364191 +0200	commit: MAJ
+28e2630bd4395d23f211ef3c5422ddcd0b05d4ab 8277d3d82c2246bf4ae2117afdbea16c87babcab ElsongMaster <elsongmaster@gmail.com> 1633365048 +0200	commit: MAJ

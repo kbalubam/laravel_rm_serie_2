@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,7 +16,10 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        
+        $titreTeam = Titre::find(7);
+        $teams  = Team::all();
+        return view('back.team.allTeam',compact('titreTeam','teams'));
     }
 
     /**
@@ -47,7 +51,7 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        return view('back.team.show', compact('team'));
     }
 
     /**
@@ -58,8 +62,8 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-    $allTeam = Team::all();
-    return view('back.team.allTeam',compact('allTeam'));
+
+    return view('back.team.edit',compact('team'));
     }
 
     /**
@@ -77,10 +81,11 @@ class TeamController extends Controller
             "poste"=>['required'],
         ]);
 
-        Storage::disk('public')->delete('img/'.$team->image);
+        Storage::disk('public')->delete('img/team/'.$team->image);
+        $team->image = $request->file('image')->hashName();
         $team->nom = $request->nom;
         $team->poste = $request->poste;
-        $request->file('image')->storePublicly('img', 'public');
+        $request->file('image')->storePublicly('img/team/', 'public');
         $team->save();
         return redirect()->route('teams.index');
     }

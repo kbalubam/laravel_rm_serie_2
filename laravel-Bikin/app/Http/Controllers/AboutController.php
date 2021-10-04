@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Icon;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -15,8 +17,8 @@ class AboutController extends Controller
     public function index()
     {
         $abouts = About::all();
-
-        return view('');
+        $titreAbout = Titre::find(2);
+        return view('back.about.allAbout',compact('abouts','titreAbout'));
     }
 
     /**
@@ -59,7 +61,10 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        //
+        $icons = Icon::where('linksocial_id',null)->get();
+
+        
+        return view('back.about.edit',compact('about','icons'));
     }
 
     /**
@@ -69,9 +74,21 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $rq, About $about)
     {
-        //
+        $rq->validate([
+                "titreSec"=>["required"],
+                "descriptionSec"=>["required"],
+                "icon_id"=>["required"],
+        ]);
+
+
+        $about->titreSec = $rq->titreSec;
+        $about->descriptionSec = $rq->descriptionSec;
+        $about->icon_id = $rq->icon_id;
+        $about->save();
+        
+        return redirect()->route('sectionsAbout');
     }
 
     /**
@@ -82,6 +99,8 @@ class AboutController extends Controller
      */
     public function destroy(About $about)
     {
-        //
+        $about->delete();
+
+        return redirect()->back();
     }
 }
